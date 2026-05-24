@@ -115,10 +115,15 @@ Use scripts for deterministic calculations:
 - `scripts/calculate_weekly.py`: Parse body-metrics.md, compute 7-day averages, deltas, streaks
 - `scripts/level_check.py`: Check if current XP meets next level threshold
 
+## Web Dashboard
+
+When the user wants an interactive/private web page for Life Game progress and tasks, use `assets/life-game-web-template/`. Read `references/web-dashboard.md` before deploying or adapting it.
+
 ## References
 
 - `references/rules.md`: Complete scoring tables, level thresholds, settlement formulas
 - `references/examples.md`: Sample task lists, XP logs, report formats
+- `references/web-dashboard.md`: Private web dashboard template usage, deployment, and privacy checklist
 
 ## Integration
 
