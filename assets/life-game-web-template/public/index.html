@@ -1,1 +1,95 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Life Game</title><link rel="stylesheet" href="__BASE_PATH__/style.css"></head><body><div class="bg"></div><header class="top"><div><div class="eyebrow">LIFE GAME</div><h1>任务面板</h1></div><button id="logout" class="ghost">退出</button></header><main class="layout"><section class="hero card"><div><div class="lv" id="level">LV.-</div><p id="xpText">读取中…</p></div><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"></circle><circle id="ring" cx="60" cy="60" r="52"></circle></svg><strong id="pct">0%</strong></div><div class="stats"><span>奖励分数<b id="points">-</b></span><span>距下级<b id="toNext">-</b></span></div></section><section class="card add"><h2>新增任务</h2><form id="addForm"><input name="title" placeholder="任务名称" required><input name="score" type="number" min="1" placeholder="分数" required><select name="category" id="category"></select><button>添加</button></form></section><section class="card filters"><input id="search" placeholder="搜索任务 / 分类"><select id="mode"><option value="active">只看未完成/可重复</option><option value="all">全部任务</option><option value="done">已完成</option></select></section><section id="tasks" class="tasks"></section><aside class="card recent"><h2>近期记录</h2><ul id="recent"></ul></aside></main><div id="toast"></div><script src="__BASE_PATH__/app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Life Game</title>
+<link rel="stylesheet" href="__BASE_PATH__/style.css">
+</head>
+<body>
+<div class="bg"></div>
+<header class="top">
+  <div>
+    <div class="eyebrow">LIFE GAME</div>
+    <h1>任务面板</h1>
+  </div>
+  <button id="logout" class="ghost">退出</button>
+</header>
+<main class="layout">
+  <section class="hero card">
+    <div>
+      <div class="lv" id="level">LV.-</div>
+      <p id="xpText">读取中…</p>
+    </div>
+    <div class="ring">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"></circle><circle id="ring" cx="60" cy="60" r="52"></circle></svg>
+      <strong id="pct">0%</strong>
+    </div>
+    <div class="stats">
+      <span>奖励分数<b id="points">-</b></span>
+      <span>距下级<b id="toNext">-</b></span>
+    </div>
+  </section>
+
+  <section class="card body-metrics">
+    <h2>📝 记录身体数据</h2>
+    <form id="bodyForm">
+      <input name="date" type="date" required>
+      <input name="weight" type="number" step="0.01" min="1" placeholder="体重 kg" required>
+      <input name="bodyfat" type="number" step="0.1" min="1" max="100" placeholder="体脂 %" required>
+      <button>记录</button>
+    </form>
+    <div class="body-history" id="bodyHistory"></div>
+  </section>
+
+  <section class="card add">
+    <h2>新增任务</h2>
+    <form id="addForm">
+      <input name="title" placeholder="任务名称" required>
+      <input name="score" type="number" min="1" placeholder="分数" required>
+      <select name="category" id="category"></select>
+      <button>添加</button>
+    </form>
+    <form id="catForm" class="cat-form">
+      <input name="category" placeholder="新分类名称">
+      <button class="ghost">+ 分类</button>
+    </form>
+  </section>
+
+  <section class="card filters">
+    <input id="search" placeholder="搜索任务 / 分类">
+    <select id="mode">
+      <option value="active">只看未完成/可重复</option>
+      <option value="all">全部任务</option>
+      <option value="done">已完成</option>
+    </select>
+  </section>
+
+  <section id="tasks" class="tasks"></section>
+
+  <aside class="card recent">
+    <h2>近期记录</h2>
+    <ul id="recent"></ul>
+  </aside>
+</main>
+
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <h3>编辑任务</h3>
+    <form id="editForm">
+      <input type="hidden" id="editId">
+      <input id="editTitle" placeholder="任务名称" required>
+      <input id="editScore" type="number" min="1" placeholder="分数" required>
+      <input id="editCategory" placeholder="分类" required>
+      <div class="modal-actions">
+        <button type="button" class="ghost" id="editCancel">取消</button>
+        <button type="submit">保存</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="__BASE_PATH__/app.js"></script>
+</body>
+</html>

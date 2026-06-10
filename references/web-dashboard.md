@@ -8,8 +8,12 @@ Use `assets/life-game-web-template/` when the user wants a private web UI for th
 - Reads and writes an existing `life-game.md` file.
 - Dashboard cards for level, XP, reward points, and next-level progress.
 - Grouped task list with search/filter.
-- Complete/reopen task actions; completing a task updates XP, points, task status, and history.
+- Complete/reopen/edit/delete task actions; completing a task updates XP, points, task status, and history.
 - Add-task form that inserts a task into the selected category.
+- Category creation, including empty categories that remain selectable before tasks are added.
+- Body metric recording for weight/body fat, with same-day updates avoiding duplicate daily XP rewards.
+- Recent activity derived from the XP history log, so task completions do not depend on a manually maintained summary block.
+- Escaped frontend rendering for task/category/history text.
 - Authentication by username/password or bearer/token login.
 - Backup before every write under `memory/.life-game-backups/` relative to the Life Game file workspace.
 
@@ -18,6 +22,8 @@ Use `assets/life-game-web-template/` when the user wants a private web UI for th
 1. Copy `assets/life-game-web-template/` into the target workspace or server.
 2. Copy `.env.example` to `.env` and set strong private values:
    - `LIFE_GAME_FILE`: absolute path to the user's `life-game.md`.
+   - `BODY_METRICS_FILE`: absolute path to the user's `body-metrics.md`.
+   - `HEALTH_PROFILE_FILE` / `HEALTH_LOG_DIR`: optional health-coach integration paths.
    - `LIFE_GAME_USER` / `LIFE_GAME_PASSWORD`: optional username login.
    - `LIFE_GAME_TOKEN`: optional token login / bearer token.
    - `LIFE_GAME_SESSION_SECRET`: long random secret for signed sessions.

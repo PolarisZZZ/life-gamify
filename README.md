@@ -2,6 +2,10 @@
 
 Gamified personal growth system for OpenClaw / AgentSkills. Turns daily tasks, body metrics, and habits into a role-playing game with levels, experience points, and reward currency.
 
+## 中文简介
+
+Life Gamify 是一个把个人任务、身体数据和习惯养成游戏化的 AgentSkill。它用 XP、等级、奖励分数、任务清单和体重/体脂周结算，把日常行动变成可追踪、可反馈、可升级的 Life Game。
+
 ## Features
 
 - **XP Leveling System** — Cumulative experience, never resets. 10 levels with escalating thresholds.
@@ -10,6 +14,7 @@ Gamified personal growth system for OpenClaw / AgentSkills. Turns daily tasks, b
 - **Weekly Settlements** — Automated rewards/penalties based on trend direction.
 - **Streak Bonuses** — 7/14/30 day consecutive check-in rewards.
 - **Reward Points** — Spendable currency for self-defined rewards.
+- **Private Web Dashboard** — Optional Node.js dashboard for task completion, task editing, categories, body metrics, and recent XP history.
 
 ## Installation
 
@@ -43,8 +48,9 @@ life-gamify/
 │   ├── rules.md                # Complete scoring tables & formulas
 │   └── examples.md             # Sample tasks, XP logs, reports
 └── assets/
-    ├── life-game-template.md   # Initialize life-game.md
-    └── body-metrics-template.md # Initialize body-metrics.md
+    ├── life-game-template.md             # Initialize life-game.md
+    ├── body-metrics-template.md          # Initialize body-metrics.md
+    └── life-game-web-template/           # Optional private web dashboard
 ```
 
 ## Core Workflows
